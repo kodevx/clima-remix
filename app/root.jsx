@@ -1,13 +1,16 @@
+import { Outlet, LiveReload, Meta, Links, Link } from "@remix-run/react";
+// import stylesheet from "~/styles/tailwind.css";
 import { cssBundleHref } from "@remix-run/css-bundle";
 
-import {
-  Links,
-  LiveReload,
-  Meta,
-  Outlet,
-  Scripts,
-  ScrollRestoration,
-} from "@remix-run/react";
+export const meta = () => {
+  const title = 'A Weather App';
+  const keywords = 'remix, javascript, tailwindcss';
+
+  return [
+    { title },
+    { name: "description", content: "Welcome to Weather App!" },
+  ];
+};
 
 export const links = () => [
   ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
@@ -15,19 +18,56 @@ export const links = () => [
 
 export default function App() {
   return (
-    <html lang="en">
+    <div>
+      <Document>
+        <Layout>
+          {process.env.NODE_ENV === 'development' 
+            ? <LiveReload /> : null}
+          <Outlet />
+        </Layout> 
+      </Document>
+    </div>
+  )
+}
+
+const Document = ({ children, title }) => {
+  return (
+    <html lang='en'>
       <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>{title ? title : 'My Weather App'}</title>
         <Meta />
         <Links />
       </head>
       <body>
-        <Outlet />
-        <ScrollRestoration />
-        <Scripts />
-        <LiveReload />
+        {children}                                    
       </body>
     </html>
-  );
+  )
+}
+
+const Layout = ({ children }) => {
+
+  return (
+    <div className="flex flex-col">
+      <div className="flex justify-between bg-gray-200 p-5">
+        <h1>{'Weather App'}</h1>
+      </div>
+      <div>
+        {children}
+      </div>
+    </div>
+  )
+}
+
+export const ErrorBoundary = ({ error }) => {
+  return (
+    <>
+      <Document>
+        <Layout>
+          <h1>Error</h1>
+          <p>{error.message}</p>
+        </Layout>
+      </Document>
+    </>
+  )
 }
