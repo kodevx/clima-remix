@@ -9,9 +9,39 @@ datasource db {
   provider = "sqlite"
   url      = env("DATABASE_URL")
 }
-
 model City {
-  id         String   @id @default(uuid())
-  name       String
-  temp       String
+  id         Int       @id @default(autoincrement())
+  name       String    @unique
+  updatedAt  DateTime  @updatedAt
+
+  temp       Float
+  desc       String
+  speed      Float
+  deg        Int
+  feelsLike  Float
+  tempMax    Float
+  tempMin    Float
+  pressure   Int
+  humidity   Int
 }
+
+// model Wind {
+//   id         Int       @id @default(autoincrement())
+//   speed      Float
+//   deg        Int
+//   gust       Float
+//   cityName   Int  
+//   City       City      @relation(references: [name], fields: [cityName])
+// }
+
+// model Weather {
+//   id         Int       @id @default(autoincrement())
+//   main       String
+//   feelsLike  Float
+//   tempMax    Float
+//   tempMin    Float
+//   pressure   Int
+//   humidity   Int
+//   cityName   Int  
+//   City       City      @relation(references: [name], fields: [cityName])
+// }
