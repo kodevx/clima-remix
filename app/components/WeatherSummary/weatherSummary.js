@@ -1,17 +1,24 @@
 import React from 'react';
-import CloseIcon from '../../../assets/images/closeIcon.svg';
+
 import ArrowRight from '../../../assets/images/arrowRight.svg';
+import { getWeatherIcon } from '../../utils/getWeatherIcon';
+
 
 const WeatherSummary = (props) => {
 
     const { data } = props;
 
+    const weatherIcon = getWeatherIcon(data.desc);
+
     return (
-            <div className='h-44 m-10 flex flex-row text-lg shadow-xl transition duration-300 ease-in-out hover:translate-x-1 hover:scale-105'>
-                <div className='grow p-10'>
+            <div className='h-52 m-10 flex flex-row text-lg shadow-xl transition duration-300 ease-in-out hover:translate-x-1 hover:scale-105'>
+                <div className='grow p-11'>
                     <div>
-                        <div className='font-gothamMedium tracking-widest'>{data.name.toUpperCase()}</div>
+                        <div className='mb-3 font-gothamMedium tracking-widest'>{data.name.toUpperCase()}</div>
                         <div className='flex flex-row justify-around'>
+                            <div className='flex flex-col items-center'>
+                                <img src={weatherIcon} className='h-14 w-14' alt={'arrow-right'} /> 
+                            </div>
                             <div className='flex flex-col items-center'>
                                 <div className='font-gothamLight'>Temperature</div>
                                 <div className='font-gothamMedium'>{data.temp}°C</div>

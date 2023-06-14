@@ -49,7 +49,7 @@ const Layout = ({ children }) => {
   return (
     <div className="flex flex-col">
       <div className="flex justify-between bg-gray-200 p-5">
-        <h1>{'Weather App'}</h1>
+        <h1 className="font-gothamBold tracking-widest text-2xl">{'WEATHER APP'}</h1>
       </div>
       <div>
         {children}
