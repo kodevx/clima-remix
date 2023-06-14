@@ -1,6 +1,5 @@
 import { Outlet, LiveReload, Meta, Links, Link } from "@remix-run/react";
-// import stylesheet from "~/styles/tailwind.css";
-import { cssBundleHref } from "@remix-run/css-bundle";
+import stylesheet from '~/tailwind.css';
 
 export const meta = () => {
   const title = 'A Weather App';
@@ -13,7 +12,7 @@ export const meta = () => {
 };
 
 export const links = () => [
-  ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
+  { rel: "stylesheet", href: stylesheet },
 ];
 
 export default function App() {

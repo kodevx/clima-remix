@@ -33,7 +33,7 @@ const Weather = () => {
     const { cities } = useLoaderData();
 
     return (
-        <div className="border-2 p-10 m-10 rounded-md">
+        <div className="border-4 border-gray-950 p-10 m-10">
             <Form
                 method="post"
                 style={{
@@ -43,24 +43,17 @@ const Weather = () => {
                     width: "100%",
                 }}
             >
-                <div className="text-xl mb-7 flex flex-col">
-                    <div className="flex justify-between">
-                        <div className="text-green-500 mt-7">
-                            {`Weather Locations List`}
-                        </div>
-                        <div>
-                            {cities && cities.length > 0 ? cities.map(data => (
-                                <WeatherSummary key={data.id} data={data} />
-                            )) : 'No Weather added for cities'}
-                        </div>
+                <div>
+                    <div className="text-2xl font-gothamBold ml-1 mb-5 tracking-widest">LOCATIONS</div>
+                    <SearchBar />
+                    <div>
+                        {cities && cities.length > 0 ? cities.map(data => (
+                            <WeatherSummary key={data.id} data={data} />
+                        )) : (
+                            <span className='text-lg'>{'No cities added'}</span>
+                        )}
                     </div>
                 </div>
-                <div>
-                    <SearchBar />
-                </div>
-                <button type='submit'>
-                    Check Weather for Locations
-                </button>
             </Form>
         </div>
     )
