@@ -50,7 +50,7 @@ const Weather = () => {
                         {cities && cities.length > 0 ? cities.map(data => (
                             <WeatherSummary key={data.id} data={data} />
                         )) : (
-                            <span className='text-lg'>{'No cities added'}</span>
+                            <span className='text-lg font-gothamMedium'>No cities added yet.</span>
                         )}
                     </div>
                 </div>
