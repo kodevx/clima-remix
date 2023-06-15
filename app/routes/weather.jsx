@@ -50,9 +50,11 @@ const Weather = () => {
                         {cities && cities.length > 0 ? cities.map(data => (
                             <WeatherSummary key={data.id} data={data} />
                         )) : (
-                            <span className='text-white px-3 bg-black font-gothamMedium tracking-wide'>
-                                No cities added yet.
-                            </span>
+                            <div className='flex justify-center'>
+                                <span className='text-lg text-white px-3 bg-black font-gothamMedium tracking-wide'>
+                                    NO CITIES ARE ADDED.
+                                </span>
+                            </div>
                         )}
                     </div>
                 </div>
