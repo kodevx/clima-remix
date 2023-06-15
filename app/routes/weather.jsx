@@ -44,7 +44,7 @@ const Weather = () => {
                 }}
             >
                 <div>
-                    <div className="text-2xl font-gothamBold ml-1 mb-5 tracking-widest">LOCATIONS</div>
+                    <div className="flex justify-center text-2xl font-gothamBold ml-1 mb-5 tracking-widest">LOCATIONS</div>
                     <SearchBar />
                     <div>
                         {cities && cities.length > 0 ? cities.map(data => (
