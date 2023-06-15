@@ -6,8 +6,8 @@ const WeatherData = props => {
     const { 
         main, 
         wind, 
-        isExpanded, 
-        handleExpand, 
+        // isExpanded, 
+        // handleExpand, 
         weather,
         isWeatherDataAvailable 
     } = props;
@@ -18,7 +18,7 @@ const WeatherData = props => {
 
     if(!isWeatherDataAvailable) {
         return (
-            <div className='text-lg flex justify-center'>
+            <div className='text-lg flex justify-center mt-14'>
                <div className='text-white px-3 bg-black font-gothamMedium tracking-wide'>
                     WEATHER DATA NOT AVAILABLE.
                 </div>
@@ -28,15 +28,15 @@ const WeatherData = props => {
 
     return (
         <Fragment>
-            <div className='p-5 border-black border-2'>
-                <div className='flex flex-col items-center my-5'>
-                    <img src={weatherIcon} className='h-14 w-14' alt={'weather-icon'} /> 
+            <div className='p-10'>
+                <div className='flex flex-col items-center my-6'>
+                    <img src={weatherIcon} className='h-14 w-14 mb-4' alt={'weather-icon'} /> 
                     <div className='font-gothamMedium text-3xl mt-4 tracking-wide'>{weather.description.toUpperCase()}</div>
-                    <div className='font-gothamMedium text-3xl mt-4'>{main.temp}°C</div>
+                    <div className='font-gothamMedium text-3xl mt-2'>{main.temp}°C</div>
                 </div>
-                <div className='flex flex-col mb-5 shadow-xl transition duration-300 ease-in-out hover:translate-x-1 hover:scale-105'>
+                <div className='flex flex-col group p-11 mb-5 shadow-xl transition duration-300 ease-in-out hover:translate-x-1 hover:scale-105'>
                     <div className='flex'>
-                        <div className='text-lg mb-3 px-3 font-gothamMedium tracking-wider bg-orange-300'>CURRENT WEATHER</div>
+                        <div className='text-lg mb-3 px-3 font-gothamMedium tracking-wider hover:transition duration-300 ease-in-out group-hover:bg-orange-300'>CURRENT WEATHER</div>
                     </div>
                     <div className='flex flex-row justify-around'>
                         <div className='flex flex-col items-center'>
@@ -59,9 +59,9 @@ const WeatherData = props => {
                     </button>
                 </form> */}
                 {/* {isExpanded ? ( */}
-                <div className='flex flex-col mb-5'>
+                <div className='flex flex-col mb-5 group p-11 shadow-xl transition duration-300 ease-in-out hover:translate-x-1 hover:scale-105'>
                     <div className='flex'>
-                        <div className='text-lg font-gothamMedium tracking-wider mb-2 px-2 bg-red-300'>TEMPERATURE EXTREMES</div>
+                        <div className='text-lg font-gothamMedium tracking-wider mb-2 px-2 hover:transition duration-300 ease-in-out group-hover:bg-red-300'>TEMPERATURE EXTREMES</div>
                     </div>
                     <div className='flex justify-around'>
                         <div className='flex flex-col items-center'>
@@ -75,9 +75,9 @@ const WeatherData = props => {
                     </div>
                 </div>
 
-                <div className='flex flex-col mb-5'>
+                <div className='flex flex-col mb-5 group p-11 shadow-xl transition duration-300 ease-in-out group-hover:translate-x-1 hover:scale-105'>
                     <div className='flex'>
-                        <div className='text-lg font-gothamMedium tracking-wider mb-2 px-2 bg-teal-300'>
+                        <div className='text-lg font-gothamMedium tracking-wider mb-2 px-2 hover:transition duration-300 ease-in-out group-hover:bg-teal-300'>
                             PRESSURE & HUMIDITY
                         </div>
                     </div>
@@ -93,9 +93,9 @@ const WeatherData = props => {
                     </div>
                 </div>
 
-                <div className='flex flex-col mb-5'>
+                <div className='flex flex-col mb-5 group p-11 shadow-xl transition duration-300 ease-in-out hover:translate-x-1 hover:scale-105'>
                     <div className='flex'>
-                        <div className='flex flex-col font-gothamMedium tracking-wider text-lg mb-2 px-2 bg-gray-200'>
+                        <div className='flex flex-col font-gothamMedium tracking-wider text-lg mb-2 px-2 hover:transition duration-300 ease-in-out group-hover:bg-gray-200'>
                             WIND CONDITIONS
                         </div>
                     </div>
