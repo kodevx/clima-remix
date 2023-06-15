@@ -7,7 +7,9 @@ import {
     SCATERED_CLOUDS,
     RAIN_AND_SNOW,
     SNOW,
-    CLEAR_SKY
+    CLEAR_SKY,
+    HAZE,
+    DUST
 } from '../constants/constants';
 
 import SunnyIcon from '../../assets/icons/Sunny/sun.svg';
@@ -16,8 +18,10 @@ import CloudySunnyIcon from '../../assets/icons/cloudySunny.png';
 import SnowIcon from '../../assets/icons/snow.png';
 import SnowRainIcon from '../../assets/icons/snowRain.png';
 import RainyIcon from '../../assets/icons/raining.png';
+import HazeIcon from '../../assets/icons/haze.png';
+import DustIcon from '../../assets/icons/dust.png';
 
-export const getWeatherIcon = (weatherCondition) => {
+export const getIconForWeather = (weatherCondition) => {
 
     let weatherIcon;
 
@@ -45,6 +49,12 @@ export const getWeatherIcon = (weatherCondition) => {
             break;
         case SNOW:
             weatherIcon = SnowIcon;
+            break;
+        case HAZE:
+            weatherIcon = HazeIcon;
+            break;
+        case DUST:
+            weatherIcon = DustIcon;
             break;
         case CLEAR_SKY:
             weatherIcon = SunnyIcon;

@@ -10,6 +10,7 @@ export const SCATERED_CLOUDS = 'scattered clouds';
 
 export const RAIN_AND_SNOW = 'rain and snow';
 export const SNOW = 'snow';
+export const HAZE = 'haze';
+export const DUST = 'dust';
 
 export const CLEAR_SKY = 'clear sky';
-
