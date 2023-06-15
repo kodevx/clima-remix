@@ -27,7 +27,7 @@ export const loader = async ({ params, request }) => {
         }
 
         const formattedData = formatWeatherData(res.data);
-        await saveCityWeather(formattedData);
+        // await saveCityWeather(formattedData);
 
         errorStatus = null
 
@@ -53,17 +53,19 @@ const CityWeather = () => {
     console.log("isWeatherDataAvailable: ",isWeatherDataAvailable);
 
     return (
-        <div className="border-2 p-10 m-10 rounded-md">
-            <div className="text-xl mb-7 flex flex-col">
-                <div className="flex justify-between">
-                    <div className="text-green-500 mt-7">
-                        {`Weather @ ${city}`}
+        <div className="border-4 border-black p-10 m-10">
+            <div className="">
+                <div className="flex">
+                    <div className="text-2xl px-2 bg-yellow-300 font-gothamBold tracking-wider">
+                        {city.toUpperCase()}
                     </div>
-                    {isWeatherDataAvailable
-                        ? <WeatherData isExpanded={isExpanded} handleExpand={handleExpand} {...weatherData} /> 
-                        : <div>Data not available.</div>
-                    }
                 </div>
+                <WeatherData 
+                    // isExpanded={isExpanded} 
+                    // handleExpand={handleExpand} 
+                    // isWeatherDataAvailable={isWeatherDataAvailable}
+                    // {...weatherData} 
+                /> 
             </div>
         </div>
     )
