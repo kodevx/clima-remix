@@ -31,8 +31,8 @@ const WeatherData = props => {
             <div className='p-10'>
                 <div className='flex flex-col items-center my-6'>
                     <img src={weatherIcon} className='h-14 w-14 mb-4' alt={'weather-icon'} /> 
-                    <div className='font-gothamMedium text-3xl mt-4 tracking-wide'>{weather.description.toUpperCase()}</div>
-                    <div className='font-gothamMedium text-3xl mt-2'>{main.temp}°C</div>
+                    <div className='font-gothamMedium text-2xl mt-4 tracking-wide'>{weather.description.toUpperCase()}</div>
+                    <div className='font-gothamMedium text-2xl mt-2'>{main.temp}°C</div>
                 </div>
                 <div className='flex flex-col group p-11 mb-5 shadow-xl transition duration-300 ease-in-out hover:translate-x-1 hover:scale-105'>
                     <div className='flex'>
