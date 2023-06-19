@@ -12,5 +12,6 @@ export const RAIN_AND_SNOW = 'rain and snow';
 export const SNOW = 'snow';
 export const HAZE = 'haze';
 export const DUST = 'dust';
+export const MIST = 'mist';
 
 export const CLEAR_SKY = 'clear sky';
