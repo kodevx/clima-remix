@@ -98,6 +98,14 @@ const WeatherData = props => {
                     </div>
                 </div>
             </div>
+            <div className='group font-gothamMedium text-sm'>
+                <div className='flex justify-end'>
+                    Last Updated at 
+                    <span className='ml-1 group-hover:text-cyan-600'>
+                        {`${data.updatedAt.split('T')[1].slice(0,5)}, ${data.updatedAt.split('T')[0]}`}
+                    </span>
+                </div>
+            </div>
         </Fragment>
     )
 }
