@@ -2,6 +2,7 @@ import { redirect } from "@remix-run/server-runtime";
 import { useLoaderData } from "react-router";
 import { Form } from "@remix-run/react";
 import axios from "axios";
+
 import SearchBar from "../components/SearchBar";
 import WeatherSummary from '../components/WeatherSummary';
 
@@ -76,7 +77,9 @@ const Weather = () => {
                 }}
             >
                 <div>
-                    <div className="flex justify-center text-2xl font-gothamBold ml-1 mb-5 tracking-widest">LOCATIONS</div>
+                    <div className="flex justify-center text-2xl font-gothamBold ml-1 mb-5 tracking-widest">
+                        LOCATIONS
+                    </div>
                     <SearchBar />
                     <div>
                         {cities && cities.length > 0 ? cities.map(data => (
