@@ -22,7 +22,7 @@ export const loader = async ({ params, request }) => {
 
 const CityWeather = () => {
 
-    const { city, weatherData, isWeatherDataAvailable } = useLoaderData();
+    const { city, weatherData } = useLoaderData();
 
     return (
         <div className="border-4 border-black p-20 m-10">

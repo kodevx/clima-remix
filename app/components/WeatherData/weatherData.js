@@ -46,12 +46,6 @@ const WeatherData = props => {
                         </div>
                     </div>
                 </div>
-                {/* <form>
-                    <button type='submit' onClick={handleExpand}>
-                        {isExpanded ? 'Show Less' : 'View More'}
-                    </button>
-                </form> */}
-                {/* {isExpanded ? ( */}
                 <div className='flex flex-col mb-5 group p-11 shadow-xl transition duration-300 ease-in-out hover:translate-x-1 hover:scale-105'>
                     <div className='flex'>
                         <div className='text-lg font-gothamMedium tracking-wider mb-2 px-2 hover:transition duration-300 ease-in-out group-hover:bg-red-300'>TEMPERATURE EXTREMES</div>
@@ -103,27 +97,24 @@ const WeatherData = props => {
                         </div>
                     </div>
                 </div>
-                {/* ) : null} */}
             </div>
         </Fragment>
     )
 }
 
-// WeatherData.defaultProps = {
-//     city: 'tokyo',
-//     isExpanded: false,
-//     isWeatherDataAvailable: true,
-//     data: {
-//       desc: 'light rain',
-//       temp: 23.68,
-//       feelsLike: 24.19,
-//       tempMin: 22.75,
-//       tempMax: 24.24,
-//       pressure: 1006,
-//       humidity: 80,
-//       speed: 2.06, 
-//       deg: 120 
-//     }
-// }
+WeatherData.defaultProps = {
+    city: 'tokyo',
+    data: {
+      desc: 'light rain',
+      temp: 23.68,
+      feelsLike: 24.19,
+      tempMin: 22.75,
+      tempMax: 24.24,
+      pressure: 1006,
+      humidity: 80,
+      speed: 2.06, 
+      deg: 120 
+    }
+}
 
 export default WeatherData;
