@@ -29,7 +29,7 @@ const CityWeather = () => {
             <div>
                 <form type='post'>
                     <input type='hidden' field='redirect' />
-                    <Link className='flex justify-center items-center text-blue-500 h-14 w-32 text-lg hover:text-white hover:bg-gradient-to-r from-cyan-500 to-blue-500 hover:duration-300 rounded-full' to={`/weather`}>
+                    <Link className='flex justify-center items-center text-blue-500 h-14 w-32 text-lg hover:text-white hover:bg-gradient-to-r from-cyan-500 to-blue-500 hover:duration-300 rounded-full' to={`/`}>
                         <img src={LeftArrow} className='h-4 w-4 mr-2 fill-white' alt={'weather-icon'} /> 
                         <div className='font-gothamMedium tracking-wider'>BACK</div>    
                     </Link>
