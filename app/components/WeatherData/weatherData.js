@@ -5,8 +5,6 @@ const WeatherData = props => {
 
     const { data } = props;
 
-    console.log("Props: ",props);
-
     if(!data) {
         return (
             <div className='text-lg flex justify-center mt-14'>

@@ -5,16 +5,17 @@ export const getCitiesWeatherList = async () => {
 }
 
 export const getWeatherByCityName = async (cityName) => {
-
-    console.log("cityName: ",cityName);
-
     return await prisma.city.findMany({
-        where: {
-          name: cityName,
-        }
+        where: { name: cityName }
     })
 }
 
 export const saveCityWeather = async (data) => {
     return await prisma.city.create({ data });
+}
+
+export const removeWeatherLocation = async (city) => {
+     return await prisma.city.delete({
+        where: { name: city }
+    });
 }

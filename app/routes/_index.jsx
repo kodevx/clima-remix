@@ -1,9 +1,9 @@
-import { redirect } from "@remix-run/server-runtime";
-import { useLoaderData } from "react-router";
-import { Form } from "@remix-run/react";
-import axios from "axios";
+import { useLoaderData } from 'react-router';
+import { Form } from '@remix-run/react';
+import { redirect } from '@remix-run/server-runtime';
+import axios from 'axios';
 
-import SearchBar from "../components/SearchBar";
+import SearchBar from '../components/SearchBar';
 import WeatherSummary from '../components/WeatherSummary';
 
 import { formatWeatherData } from '../utils/formatWeatherData';
@@ -20,15 +20,10 @@ export const loader = async ({ params, request }) => {
 
     const cities = await getCitiesWeatherList();
 
-    const handleClose = () => {
-        console.log("handle Close invoked!");
-    }
-
     console.log("cities: ",cities);
 
     return {
-        cities,
-        handleClose
+        cities
     }
 }
 
@@ -64,13 +59,13 @@ export const action = async ({ request, params }) => {
     if(city) {
         return redirect(`/weather/${city}`);
     } else {
-        return redirect(`/weather`);
+        return redirect(`/`);
     }
 }
 
 const Index = () => {
 
-    const { cities, handleClose } = useLoaderData();
+    const { cities } = useLoaderData();
 
     return (
         <div className="border-4 border-gray-950 p-10 m-10">
@@ -90,7 +85,10 @@ const Index = () => {
                     <SearchBar />
                     <div>
                         {cities && cities.length > 0 ? cities.map(data => (
-                            <WeatherSummary key={data.id} handleClose={handleClose} data={data} />
+                            <WeatherSummary 
+                                key={data.id}
+                                data={data} 
+                            />
                         )) : (
                             <div className='flex justify-center'>
                                 <span className='text-lg text-white px-3 bg-black font-gothamMedium tracking-wide'>
