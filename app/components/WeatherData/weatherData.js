@@ -3,20 +3,11 @@ import { getIconForWeather } from '../../utils/getIconForWeather';
 
 const WeatherData = props => {
 
-    const { 
-        main, 
-        wind, 
-        // isExpanded, 
-        // handleExpand, 
-        weather,
-        isWeatherDataAvailable 
-    } = props;
+    const { data } = props;
 
     console.log("Props: ",props);
 
-    const weatherIcon = getIconForWeather(weather.description);
-
-    if(!isWeatherDataAvailable) {
+    if(!data) {
         return (
             <div className='text-lg flex justify-center mt-14'>
                <div className='text-white px-3 bg-black font-gothamMedium tracking-wide'>
@@ -26,13 +17,15 @@ const WeatherData = props => {
         )
     }
 
+    const weatherIcon = getIconForWeather(data.desc);
+
     return (
         <Fragment>
             <div className='p-10'>
                 <div className='flex flex-col items-center my-6'>
                     <img src={weatherIcon} className='h-14 w-14 mb-4' alt={'weather-icon'} /> 
-                    <div className='font-gothamMedium text-2xl mt-4 tracking-wide'>{weather.description.toUpperCase()}</div>
-                    <div className='font-gothamMedium text-2xl mt-2'>{main.temp}°C</div>
+                    <div className='font-gothamMedium text-2xl mt-4 tracking-wide'>{data.desc.toUpperCase()}</div>
+                    <div className='font-gothamMedium text-2xl mt-2'>{data.temp}°C</div>
                 </div>
                 <div className='flex flex-col group p-11 mb-5 shadow-xl transition duration-300 ease-in-out hover:translate-x-1 hover:scale-105'>
                     <div className='flex'>
@@ -41,15 +34,15 @@ const WeatherData = props => {
                     <div className='flex flex-row justify-around'>
                         <div className='flex flex-col items-center'>
                             <span className='text-lg font-gothamLight'>Temperature</span>
-                            <span className='text-lg font-gothamMedium'>{main.temp}°C</span>
+                            <span className='text-lg font-gothamMedium'>{data.temp}°C</span>
                         </div>
                         <div className='flex flex-col items-center'>
                             <span className='text-lg font-gothamLight'>Description</span>
-                            <span className='text-lg font-gothamMedium'>{weather.description}</span>
+                            <span className='text-lg font-gothamMedium'>{data.desc}</span>
                         </div>
                         <div className='flex flex-col items-center'>
                             <span className='text-lg font-gothamLight'>Feels like</span>
-                            <span className='text-lg font-gothamMedium'>{main.feels_like}°C</span>
+                            <span className='text-lg font-gothamMedium'>{data.feelsLike}°C</span>
                         </div>
                     </div>
                 </div>
@@ -66,11 +59,11 @@ const WeatherData = props => {
                     <div className='flex justify-around'>
                         <div className='flex flex-col items-center'>
                             <span className='text-lg font-gothamLight'>Min Temp</span>
-                            <span className='text-lg font-gothamMedium'>{main.temp_min}°C</span>
+                            <span className='text-lg font-gothamMedium'>{data.tempMin}°C</span>
                         </div>
                         <div className='flex flex-col items-center'>
                             <span className='text-lg font-gothamLight'>Max Temp</span>
-                            <span className='text-lg font-gothamMedium'>{main.temp_max}°C</span>
+                            <span className='text-lg font-gothamMedium'>{data.tempMax}°C</span>
                         </div>
                     </div>
                 </div>
@@ -84,11 +77,11 @@ const WeatherData = props => {
                     <div className='flex justify-around'>
                         <div className='flex flex-col items-center'>
                             <span className='text-lg font-gothamLight'>Pressure</span>
-                            <span className='text-lg font-gothamMedium'>{main.pressure}</span>
+                            <span className='text-lg font-gothamMedium'>{data.pressure}</span>
                         </div>
                         <div className='flex flex-col items-center'>
                             <span className='text-lg font-gothamLight'>Humidity</span>
-                            <span className='text-lg font-gothamMedium'>{main.humidity}</span>
+                            <span className='text-lg font-gothamMedium'>{data.humidity}</span>
                         </div>
                     </div>
                 </div>
@@ -102,11 +95,11 @@ const WeatherData = props => {
                     <div className='flex justify-around'>
                         <div className='flex flex-col items-center'>
                             <span className='text-lg font-gothamLight'>Speed</span>
-                            <span className='text-lg font-gothamMedium'>{wind.speed}</span>
+                            <span className='text-lg font-gothamMedium'>{data.speed}</span>
                         </div>
                         <div className='flex flex-col items-center'>
                             <span className='text-lg font-gothamLight'>Degree</span>
-                            <span className='text-lg font-gothamMedium'>{wind.deg}</span>
+                            <span className='text-lg font-gothamMedium'>{data.deg}</span>
                         </div>
                     </div>
                 </div>
@@ -116,20 +109,21 @@ const WeatherData = props => {
     )
 }
 
-WeatherData.defaultProps = {
-    city: 'tokyo',
-    isExpanded: false,
-    isWeatherDataAvailable: true,
-    weather: { id: 500, main: 'Rain', description: 'light rain', icon: '10d' },
-    main: {
-      temp: 23.68,
-      feels_like: 24.19,
-      temp_min: 22.75,
-      temp_max: 24.24,
-      pressure: 1006,
-      humidity: 80
-    },
-    wind: { speed: 2.06, deg: 120 }
-}
+// WeatherData.defaultProps = {
+//     city: 'tokyo',
+//     isExpanded: false,
+//     isWeatherDataAvailable: true,
+//     data: {
+//       desc: 'light rain',
+//       temp: 23.68,
+//       feelsLike: 24.19,
+//       tempMin: 22.75,
+//       tempMax: 24.24,
+//       pressure: 1006,
+//       humidity: 80,
+//       speed: 2.06, 
+//       deg: 120 
+//     }
+// }
 
 export default WeatherData;

@@ -1,7 +1,7 @@
 
 export const formatWeatherData = (data) => {
     const formattedData = {
-        name: data.name,    
+        name: data.name.toLowerCase(),    
         desc: data.weather[0].description,
         temp: data.main.temp,      
         speed: data.wind.speed,
