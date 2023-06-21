@@ -1,5 +1,7 @@
 import React, { Fragment } from 'react';
+import { Form } from "@remix-run/react";
 import { getIconForWeather } from '../../utils/getIconForWeather';
+import UpdateIcon from '../../../assets/icons/refresh.png';
 
 const WeatherData = props => {
 
@@ -96,14 +98,24 @@ const WeatherData = props => {
                     </div>
                 </div>
             </div>
-            <div className='group font-gothamMedium text-sm'>
-                <div className='flex justify-end'>
-                    Last Updated at 
-                    <span className='ml-1 group-hover:text-cyan-600'>
-                        {`${data.updatedAt.split('T')[1].slice(0,5)}, ${data.updatedAt.split('T')[0]}`}
-                    </span>
+            <Form method='post'>
+                <div className='flex justify-end items-center'>
+                    <div>
+                        <input name='request-type' value='update-weather-info' readOnly hidden />
+                        <button type='submit' className='shadow-xl rounded-3xl mx-2 hover:bg-emerald-400 p-2 transition duration-300 ease-in-out hover:scale-110'>
+                            <img src={UpdateIcon} className='h-6 w-6' alt={'update-icon'} /> 
+                        </button>
+                    </div>
+                    <div className='group font-gothamMedium text-sm'>
+                        <div className='flex justify-end'>
+                            Last Updated at 
+                            <span className='ml-1 group-hover:text-cyan-600'>
+                                {`${data.updatedAt.split('T')[1].slice(0,5)}, ${data.updatedAt.split('T')[0]}`}
+                            </span>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </Form>
         </Fragment>
     )
 }

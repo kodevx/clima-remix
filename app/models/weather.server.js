@@ -19,3 +19,10 @@ export const removeWeatherLocation = async (city) => {
         where: { name: city }
     });
 }
+
+export const updateWeatherForCity = async (city, data) => {
+    return await prisma.city.update({
+        where: { name: city },
+        data
+    });
+}
