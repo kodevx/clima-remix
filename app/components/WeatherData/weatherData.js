@@ -20,7 +20,14 @@ const WeatherData = props => {
     const weatherIcon = getIconForWeather(data.desc);
 
     const refinedDateFromUTC = new Date(data.updatedAt);
-    const localDateAndTime = refinedDateFromUTC.toLocaleString('en-IN');
+    const localDateAndTime = 
+        refinedDateFromUTC.toLocaleString('en-IN', { 
+            year: 'numeric', 
+            month: 'numeric', 
+            day: 'numeric', 
+            hour: '2-digit', 
+            minute:'2-digit' 
+        });
 
     return (
         <Fragment>
@@ -110,12 +117,13 @@ const WeatherData = props => {
                         </button>
                     </div>
                     <div className='group font-gothamMedium text-sm'>
-                        <div className='flex justify-end'>
+                        <div className='flex justify-end tracking-wide'>
                             Last Updated at 
-                            <span className='ml-1 group-hover:text-cyan-600'>
+                            <span className='ml-1 group-hover:text-orange-600'>
                                 {localDateAndTime}
                             </span>
                         </div>
+                        <div className='text-sm text-gray-400 font-loveloLight italic tracking-wider'>*Time Zone based in INDIA</div>
                     </div>
                 </div>
             </Form>
