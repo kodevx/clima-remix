@@ -123,7 +123,7 @@ const WeatherData = props => {
                                 {localDateAndTime}
                             </span>
                         </div>
-                        <div className='text-sm text-gray-400 font-loveloLight italic tracking-wider'>*Time Zone based in INDIA</div>
+                        <div className='text-xs text-gray-400 font-loveloLight italic tracking-wider'>*Time Zone based in INDIA</div>
                     </div>
                 </div>
             </Form>
