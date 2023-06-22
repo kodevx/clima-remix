@@ -26,6 +26,8 @@ import DustIcon from '../../assets/icons/dust.png';
 import MistIcon from '../../assets/icons/mist.png';
 import FogIcon from '../../assets/icons/denseFog.png';
 import SmokeIcon from '../../assets/icons/smoke.png';
+import FewCloudsIcon from '../../assets/icons/fewClouds.png';
+import BrokenCloudsIcon from '../../assets/icons/brokenClouds.png';
 
 export const getIconForWeather = (weatherCondition) => {
 
@@ -39,10 +41,10 @@ export const getIconForWeather = (weatherCondition) => {
                 weatherIcon = RainyIcon;
                 break;
         case BROKEN_CLOUDS: 
-                weatherIcon = CloudsIcon;
+                weatherIcon = BrokenCloudsIcon;
                 break;
         case FEW_CLOUDS:
-            weatherIcon = CloudySunnyIcon;
+            weatherIcon = FewCloudsIcon;
             break;
         case OVERCAST_CLOUDS:
             weatherIcon = CloudsIcon;

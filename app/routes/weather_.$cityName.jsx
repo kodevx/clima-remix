@@ -48,6 +48,9 @@ export const action = async ({ params, request }) => {
         const res = await axios.get(
             `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.WEATHER_API_KEY}&units=metric`
         );
+
+        const hourlyForecast = 
+
         console.log("Weather Data: ",res.data);
 
         const formattedData = formatWeatherData(res.data);
