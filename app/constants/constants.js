@@ -14,5 +14,6 @@ export const HAZE = 'haze';
 export const DUST = 'dust';
 export const FOG = 'fog';
 export const MIST = 'mist';
+export const SMOKE = 'smoke';
 
 export const CLEAR_SKY = 'clear sky';
