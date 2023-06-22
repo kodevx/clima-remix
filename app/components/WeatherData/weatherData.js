@@ -19,6 +19,9 @@ const WeatherData = props => {
 
     const weatherIcon = getIconForWeather(data.desc);
 
+    const refinedDateFromUTC = new Date(data.updatedAt);
+    const localDateAndTime = refinedDateFromUTC.toLocaleString('en-IN');
+
     return (
         <Fragment>
             <div className='p-10'>
@@ -110,7 +113,7 @@ const WeatherData = props => {
                         <div className='flex justify-end'>
                             Last Updated at 
                             <span className='ml-1 group-hover:text-cyan-600'>
-                                {`${data.updatedAt.split('T')[1].slice(0,5)}, ${data.updatedAt.split('T')[0]}`}
+                                {localDateAndTime}
                             </span>
                         </div>
                     </div>

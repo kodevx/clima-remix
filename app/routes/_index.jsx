@@ -44,7 +44,6 @@ export const action = async ({ request, params }) => {
     console.log("City: ",city);
 
     if(requestType === REMOVE_LOCATION) {   // Remove Location from Weather List
-        console.log("remove location");
         try {
             console.log(`Remove City ${city}`);
             const weatherData = await removeWeatherLocation(city);
