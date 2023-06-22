@@ -10,7 +10,8 @@ import {
     CLEAR_SKY,
     HAZE,
     DUST,
-    MIST
+    MIST,
+    FOG
 } from '../constants/constants';
 
 import SunnyIcon from '../../assets/icons/Sunny/sun.svg';
@@ -22,6 +23,7 @@ import RainyIcon from '../../assets/icons/raining.png';
 import HazeIcon from '../../assets/icons/haze.png';
 import DustIcon from '../../assets/icons/dust.png';
 import MistIcon from '../../assets/icons/mist.png';
+import FogIcon from '../../assets/icons/denseFog.png';
 
 export const getIconForWeather = (weatherCondition) => {
 
@@ -63,6 +65,9 @@ export const getIconForWeather = (weatherCondition) => {
             break;
         case MIST:
             weatherIcon = MistIcon;
+            break;
+        case FOG:
+            weatherIcon = FogIcon;
             break;
     }
 
