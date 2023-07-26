@@ -58,7 +58,7 @@ export default function App() {
 
   return (
     <div>
-      <Document>
+      <Document isDarkMode={isDarkMode}>
         <Layout isDarkMode={isDarkMode} themeId={themeId} currentTheme={currentTheme}>
           {process.env.NODE_ENV === 'development' 
             ? <LiveReload /> : null}
@@ -69,9 +69,12 @@ export default function App() {
   )
 }
 
-const Document = ({ children, title }) => {
+const Document = ({ children, title, isDarkMode }) => {
+
+  const themeModeClassName = isDarkMode ? 'dark' : null;    // Adds 'dark' classname to root html element to enable Dark Mode 
+
   return (
-    <html lang='en'>
+    <html lang='en' class={themeModeClassName}>
       <head>
         <title>{title ? title : 'My Weather App'}</title>
         <Meta />

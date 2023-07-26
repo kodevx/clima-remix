@@ -88,7 +88,7 @@ const Index = () => {
     const { cities } = useLoaderData();
 
     return (
-        <div className="border-4 border-gray-950 p-10 m-10">
+        <div className="border-4 border-gray-950 p-10 m-10 dark:bg-slate-800">
             <div>
                 <Form method="post">
                     <div className="flex justify-center text-2xl font-gothamBold ml-1 mb-5 tracking-widest">
