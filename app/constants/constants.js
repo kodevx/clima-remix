@@ -9,6 +9,7 @@ export const OVERCAST_CLOUDS = 'overcast clouds';
 export const SCATERED_CLOUDS = 'scattered clouds';
 
 export const RAIN_AND_SNOW = 'rain and snow';
+export const LIGHT_INTENSITY_DRIZZLE = 'light intensity drizzle';
 export const SNOW = 'snow';
 export const HAZE = 'haze';
 export const DUST = 'dust';

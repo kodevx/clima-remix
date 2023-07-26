@@ -12,7 +12,8 @@ import {
     DUST,
     MIST,
     FOG,
-    SMOKE
+    SMOKE,
+    LIGHT_INTENSITY_DRIZZLE
 } from '../constants/constants';
 
 import SunnyIcon from '../../assets/icons/Sunny/sun.svg';
@@ -28,6 +29,7 @@ import FogIcon from '../../assets/icons/denseFog.png';
 import SmokeIcon from '../../assets/icons/smoke.png';
 import FewCloudsIcon from '../../assets/icons/fewClouds.png';
 import BrokenCloudsIcon from '../../assets/icons/brokenClouds.png';
+import DrizzleIcon from '../../assets/icons/drizzle.png';
 
 export const getIconForWeather = (weatherCondition) => {
 
@@ -54,6 +56,9 @@ export const getIconForWeather = (weatherCondition) => {
             break;
         case RAIN_AND_SNOW:
             weatherIcon = SnowRainIcon;
+            break;
+        case LIGHT_INTENSITY_DRIZZLE:
+            weatherIcon = DrizzleIcon;
             break;
         case SNOW:
             weatherIcon = SnowIcon;
