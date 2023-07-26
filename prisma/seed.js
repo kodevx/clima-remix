@@ -3,24 +3,31 @@ const prisma = new PrismaClient();
 
 async function seed() {
 
-  const cities = [
-    {
-      name: "Kochi",
-      temp: '24'
-    },
-    {
-      name: "Dubai",
-      temp: '34'
-    }
-  ]
+  // const cities = [
+  //   {
+  //     name: "Kochi",
+  //     temp: '24'
+  //   },
+  //   {
+  //     name: "Dubai",
+  //     temp: '34'
+  //   }
+  // ]
   
-  for (const city of cities) {
-    await prisma.city.create({
-      data: city
-    });
+  // for (const city of cities) {
+  //   await prisma.city.create({
+  //     data: city
+  //   });
+  // }
+
+  let data = { 
+    id: 1,
+    theme: 'light'
   }
 
-  console.log(`Database has been seeded. 🌱`);
+  prisma.theme.create({ data })
+
+  console.log(`\nDatabase has been seeded. 🌱`);
 }
 
 seed()
