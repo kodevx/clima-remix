@@ -8,7 +8,6 @@ const ThemeSwitchButton = props => {
     const { isDarkMode } = props;
 
     const themeIcon = isDarkMode ? SunIcon : MoonIcon;
-    // const themeLabel = isDarkMode ? 'Light' : 'Dark';
 
     return (
         <button 
@@ -17,7 +16,6 @@ const ThemeSwitchButton = props => {
         >
             <div className='flex flex-row'>
                 <img src={themeIcon} className='h-10 w-10' alt={'arrow-right'} />
-                {/* <span>{`Switch to ${themeLabel}`}</span> */}
             </div>
         </button>
     )
