@@ -8,7 +8,7 @@ const SearchBar = props => {
                 className={'w-96 h-12 drop-shadow-2xl font-gothamMedium outline-none border-black text-black rounded-3xl p-4 mr-3'}
                 area-label='Search weather for a city eg: Cochin'
                 placeholder='Search weather for a city eg: Cochin'
-                name="city"
+                name='city'
             />
             <button 
                 type='submit'
