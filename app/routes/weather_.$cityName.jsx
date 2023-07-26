@@ -74,7 +74,7 @@ const CityWeather = (props) => {
     const { city, weatherData } = useLoaderData();
 
     return (
-        <div className="border-4 border-black p-20 m-10">
+        <div className="border-4 border-black p-20 m-10 dark:bg-stone-950">
             <div>
                 <div className="flex justify-between">
                     <Link className='flex justify-center items-center text-blue-500 h-14 w-32 text-lg hover:text-white hover:bg-gradient-to-r from-cyan-500 to-blue-500 hover:duration-300 rounded-full' to={`/`}>
@@ -100,7 +100,7 @@ const CityWeather = (props) => {
                     </Form>
                 </div>
                 <div className="flex justify-center">
-                    <div className="text-3xl bg-yellow-300 font-gothamBold tracking-wider px-3">
+                    <div className="text-3xl bg-yellow-300 font-gothamBold tracking-wider px-3 dark:bg-neutral-800 dark:text-orange-400">
                         {city.toUpperCase()}
                     </div>
                 </div>

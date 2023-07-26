@@ -1,7 +1,7 @@
 import React from 'react';
 
 import MoonIcon from '../../../assets/icons/crescentMoonBorder.svg';
-import SunIcon from '../../../assets/icons/Sunny/sun-icon-2.png';
+import SunIcon from '../../../assets/icons/Sunny/lightModeIcon.png';
 
 const ThemeSwitchButton = props => {
 
