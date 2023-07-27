@@ -109,17 +109,17 @@ const WeatherData = props => {
                 </div>
             </div>
             <Form method='post'>
-                <div className='flex justify-end items-center'>
+                <div className='flex justify-end items-center group'>
                     <div>
                         <input name='request-type' value='update-weather-info' readOnly hidden />
                         <button type='submit' className='shadow-xl rounded-3xl mx-2 hover:bg-emerald-400 p-2 transition duration-300 ease-in-out hover:scale-110 dark:bg-stone-300 dark:hover:bg-emerald-400'>
                             <img src={UpdateIcon} className='h-6 w-6' alt={'update-icon'} /> 
                         </button>
                     </div>
-                    <div className='group font-gothamMedium text-sm'>
+                    <div className='font-gothamMedium text-sm'>
                         <div className='flex justify-end tracking-wide dark:text-white'>
                             Last Updated at 
-                            <span className='ml-1 group-hover:text-orange-600'>
+                            <span className='ml-1 group-hover:text-orange-600 dark:group-hover:text-orange-500'>
                                 {localDateAndTime}
                             </span>
                         </div>
