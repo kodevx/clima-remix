@@ -4,7 +4,7 @@ import { Form, Link } from "@remix-run/react";
 import { redirect } from '@remix-run/server-runtime';
 import LeftArrow from '../../assets/icons/LightTheme/leftArrow.png';
 
-import WeatherData from "../components/WeatherData";
+import WeatherDetails from "../components/WeatherDetails";
 import Tippy from '@tippyjs/react';
 import TippyStyles from 'tippy.js/dist/tippy.css';
 // import 'tippy.js/animations/scale-subtle.css';
@@ -111,7 +111,7 @@ const CityWeather = (props) => {
                         {city.toUpperCase()}
                     </div>
                 </div>
-                <WeatherData data={weatherData} isDarkTheme={isDarkTheme} /> 
+                <WeatherDetails data={weatherData} isDarkTheme={isDarkTheme} /> 
             </div>
         </div>
     )

@@ -3,7 +3,7 @@ import { Form } from "@remix-run/react";
 import { getIconForWeather } from '../../utils/getIconForWeather';
 import UpdateIcon from '../../../assets/icons/LightTheme/refresh.png';
 
-const WeatherData = props => {
+const WeatherDetails = props => {
 
     const { data, isDarkTheme } = props;
 
@@ -131,7 +131,7 @@ const WeatherData = props => {
     )
 }
 
-WeatherData.defaultProps = {
+WeatherDetails.defaultProps = {
     city: 'tokyo',
     data: {
       desc: 'light rain',
@@ -146,4 +146,4 @@ WeatherData.defaultProps = {
     }
 }
 
-export default WeatherData;
+export default WeatherDetails;
