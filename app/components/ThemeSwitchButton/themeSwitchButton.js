@@ -1,13 +1,13 @@
 import React from 'react';
 
-import MoonIcon from '../../../assets/icons/crescentMoonBorder.svg';
-import SunIcon from '../../../assets/icons/Sunny/lightModeIcon.png';
+import DarkThemeIcon from '../../../assets/icons/LightTheme/crescentMoonBorder.svg';
+import LightThemeIcon from '../../../assets/icons/LightTheme/Sunny/lightModeIcon.png';
 
 const ThemeSwitchButton = props => {
 
     const { isDarkMode } = props;
 
-    const themeIcon = isDarkMode ? SunIcon : MoonIcon;
+    const themeIcon = isDarkMode ? LightThemeIcon : DarkThemeIcon;
 
     return (
         <button 

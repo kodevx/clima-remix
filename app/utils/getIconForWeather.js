@@ -17,37 +17,37 @@ import {
 } from '../constants/constants';
 
 // Light Theme Icons
-import SunnyIcon from '../../assets/icons/Sunny/sun.svg';
-import CloudsIcon from '../../assets/icons/cloudy.png';
-import CloudySunnyIcon from '../../assets/icons/cloudySunny.png';
-import SnowIcon from '../../assets/icons/snow.png';
-import SnowRainIcon from '../../assets/icons/snowRain.png';
-import RainyIcon from '../../assets/icons/raining.png';
-import HazeIcon from '../../assets/icons/haze.png';
-import DustIcon from '../../assets/icons/dust.png';
-import MistIcon from '../../assets/icons/mist.png';
-import FogIcon from '../../assets/icons/denseFog.png';
-import SmokeIcon from '../../assets/icons/smoke.png';
-import FewCloudsIcon from '../../assets/icons/fewClouds.png';
-import BrokenCloudsIcon from '../../assets/icons/brokenClouds.png';
-import DrizzleIcon from '../../assets/icons/drizzle.png';
+import SunnyIcon from '../../assets/icons/LightTheme/Sunny/sun.svg';
+import CloudsIcon from '../../assets/icons/LightTheme/cloudy.png';
+import CloudySunnyIcon from '../../assets/icons/LightTheme/cloudySunny.png';
+import SnowIcon from '../../assets/icons/LightTheme/snow.png';
+import SnowRainIcon from '../../assets/icons/LightTheme/snowRain.png';
+import RainyIcon from '../../assets/icons/LightTheme/raining.png';
+import HazeIcon from '../../assets/icons/LightTheme/haze.png';
+import DustIcon from '../../assets/icons/LightTheme/dust.png';
+import MistIcon from '../../assets/icons/LightTheme/mist.png';
+import FogIcon from '../../assets/icons/LightTheme/denseFog.png';
+import SmokeIcon from '../../assets/icons/LightTheme/smoke.png';
+import FewCloudsIcon from '../../assets/icons/LightTheme/fewClouds.png';
+import BrokenCloudsIcon from '../../assets/icons/LightTheme/brokenClouds.png';
+import DrizzleIcon from '../../assets/icons/LightTheme/drizzle.png';
 
 // Dark Theme Icons
-import SunIconDark from '../../assets/icons/DarkThemeIcons/sunny.png';
-import BrokenCloudsDark from '../../assets/icons/DarkThemeIcons/brokenClouds.png';
-import MistDarkIcon from '../../assets/icons/DarkThemeIcons/mist.png';
-import OvercastCloudsDark from '../../assets/icons/DarkThemeIcons/overcastClouds.png';
-import LightRainDark from '../../assets/icons/DarkThemeIcons/lightRain.png';
-import SnowIconDark from '../../assets/icons/DarkThemeIcons/snow.png';
-import FewCloudsDark from '../../assets/icons/DarkThemeIcons/fewClouds.png';
-import RainDark from '../../assets/icons/DarkThemeIcons/rain.png';
-import HazeDark from '../../assets/icons/DarkThemeIcons/haze.png';
-import FogDark from '../../assets/icons/DarkThemeIcons/fog.png';
-import SmokeDark from '../../assets/icons/DarkThemeIcons/smoke.png';
-import DrizzleDark from '../../assets/icons/DarkThemeIcons/drizzle.png';
-import SnowRainDark from '../../assets/icons/DarkThemeIcons/rainSnow.png';
-import DustDark from '../../assets/icons/DarkThemeIcons/dust.png';
-import CloudySunnyDark from '../../assets/icons/DarkThemeIcons/cloudSunny.png';
+import SunIconDark from '../../assets/icons/DarkTheme/sunny.png';
+import BrokenCloudsDark from '../../assets/icons/DarkTheme/brokenClouds.png';
+import MistDarkIcon from '../../assets/icons/DarkTheme/mist.png';
+import OvercastCloudsDark from '../../assets/icons/DarkTheme/overcastClouds.png';
+import LightRainDark from '../../assets/icons/DarkTheme/lightRain.png';
+import SnowIconDark from '../../assets/icons/DarkTheme/snow.png';
+import FewCloudsDark from '../../assets/icons/DarkTheme/fewClouds.png';
+import RainDark from '../../assets/icons/DarkTheme/rain.png';
+import HazeDark from '../../assets/icons/DarkTheme/haze.png';
+import FogDark from '../../assets/icons/DarkTheme/fog.png';
+import SmokeDark from '../../assets/icons/DarkTheme/smoke.png';
+import DrizzleDark from '../../assets/icons/DarkTheme/drizzle.png';
+import SnowRainDark from '../../assets/icons/DarkTheme/rainSnow.png';
+import DustDark from '../../assets/icons/DarkTheme/dust.png';
+import CloudySunnyDark from '../../assets/icons/DarkTheme/cloudSunny.png';
 
 
 export const getIconForWeather = (weatherCondition, isDarkMode = false) => {

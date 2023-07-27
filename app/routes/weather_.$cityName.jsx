@@ -2,7 +2,7 @@ import { useLoaderData, useActionData } from "react-router";
 import axios from 'axios';
 import { Form, Link } from "@remix-run/react";
 import { redirect } from '@remix-run/server-runtime';
-import LeftArrow from '../../assets/icons/leftArrow.png';
+import LeftArrow from '../../assets/icons/LightTheme/leftArrow.png';
 
 import WeatherData from "../components/WeatherData";
 import Tippy from '@tippyjs/react';

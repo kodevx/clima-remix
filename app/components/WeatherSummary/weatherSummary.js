@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form, Link } from "@remix-run/react";
 
-import ArrowRight from '../../../assets/icons/arrowRight.svg';
+import ArrowRight from '../../../assets/icons/LightTheme/arrowRight.svg';
 import { getIconForWeather } from '../../utils/getIconForWeather';
 
 const WeatherSummary = (props) => {

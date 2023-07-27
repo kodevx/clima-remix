@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { Form } from "@remix-run/react";
 import { getIconForWeather } from '../../utils/getIconForWeather';
-import UpdateIcon from '../../../assets/icons/refresh.png';
+import UpdateIcon from '../../../assets/icons/LightTheme/refresh.png';
 
 const WeatherData = props => {
 
