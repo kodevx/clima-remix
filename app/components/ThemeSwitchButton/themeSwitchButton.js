@@ -5,9 +5,9 @@ import LightThemeIcon from '../../../assets/icons/LightTheme/Sunny/lightModeIcon
 
 const ThemeSwitchButton = props => {
 
-    const { isDarkMode } = props;
+    const { isDarkTheme } = props;
 
-    const themeIcon = isDarkMode ? LightThemeIcon : DarkThemeIcon;
+    const themeIcon = isDarkTheme ? LightThemeIcon : DarkThemeIcon;
 
     return (
         <button 

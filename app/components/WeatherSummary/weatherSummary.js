@@ -6,9 +6,9 @@ import { getIconForWeather } from '../../utils/getIconForWeather';
 
 const WeatherSummary = (props) => {
 
-    const { data, isDarkMode } = props;
+    const { data, isDarkTheme } = props;
 
-    const weatherIcon = getIconForWeather(data.desc, isDarkMode);
+    const weatherIcon = getIconForWeather(data.desc, isDarkTheme);
 
     return (
             <div className='h-52 m-10 flex flex-row text-lg shadow-xl transition duration-300 ease-in-out hover:translate-x-1 hover:scale-105 dark:bg-neutral-800'>

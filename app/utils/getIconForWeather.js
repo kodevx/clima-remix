@@ -50,55 +50,55 @@ import DustDark from '../../assets/icons/DarkTheme/dust.png';
 import CloudySunnyDark from '../../assets/icons/DarkTheme/cloudSunny.png';
 
 
-export const getIconForWeather = (weatherCondition, isDarkMode = false) => {
+export const getIconForWeather = (weatherCondition, isDarkTheme = false) => {
 
     let weatherIcon;
  
     switch (weatherCondition) {
         case LIGHT_RAIN: 
-                weatherIcon = isDarkMode ? LightRainDark : RainyIcon;
+                weatherIcon = isDarkTheme ? LightRainDark : RainyIcon;
                 break;
         case MODERATE_RAIN: 
-                weatherIcon = isDarkMode ? RainDark : RainyIcon;
+                weatherIcon = isDarkTheme ? RainDark : RainyIcon;
                 break;
         case BROKEN_CLOUDS: 
-                weatherIcon = isDarkMode ? BrokenCloudsDark : BrokenCloudsIcon;
+                weatherIcon = isDarkTheme ? BrokenCloudsDark : BrokenCloudsIcon;
                 break;
         case FEW_CLOUDS:
-                weatherIcon = isDarkMode ? FewCloudsDark : FewCloudsIcon;
+                weatherIcon = isDarkTheme ? FewCloudsDark : FewCloudsIcon;
                 break;
         case OVERCAST_CLOUDS:
-                weatherIcon = isDarkMode ? OvercastCloudsDark : CloudsIcon;
+                weatherIcon = isDarkTheme ? OvercastCloudsDark : CloudsIcon;
                 break;
         case SCATERED_CLOUDS:
-                weatherIcon = isDarkMode ? CloudySunnyDark : CloudySunnyIcon;
+                weatherIcon = isDarkTheme ? CloudySunnyDark : CloudySunnyIcon;
                 break;
         case RAIN_AND_SNOW:
-                weatherIcon = isDarkMode ? SnowRainDark : SnowRainIcon;
+                weatherIcon = isDarkTheme ? SnowRainDark : SnowRainIcon;
                 break;
         case LIGHT_INTENSITY_DRIZZLE:
-                weatherIcon = isDarkMode ? DrizzleDark : DrizzleIcon;
+                weatherIcon = isDarkTheme ? DrizzleDark : DrizzleIcon;
                 break;
         case SNOW:
-                weatherIcon = isDarkMode ? SnowIconDark : SnowIcon;
+                weatherIcon = isDarkTheme ? SnowIconDark : SnowIcon;
                 break;
         case HAZE:
-                weatherIcon = isDarkMode ? HazeDark : HazeIcon;
+                weatherIcon = isDarkTheme ? HazeDark : HazeIcon;
                 break;
         case DUST:
-                weatherIcon =  isDarkMode ? DustDark : DustIcon;
+                weatherIcon =  isDarkTheme ? DustDark : DustIcon;
                 break;
         case CLEAR_SKY:
-                weatherIcon = isDarkMode ? SunIconDark : SunnyIcon;
+                weatherIcon = isDarkTheme ? SunIconDark : SunnyIcon;
                 break;
         case MIST:
-                weatherIcon = isDarkMode ? MistDarkIcon : MistIcon;
+                weatherIcon = isDarkTheme ? MistDarkIcon : MistIcon;
                 break;
         case FOG:
-                weatherIcon = isDarkMode ? FogDark : FogIcon;
+                weatherIcon = isDarkTheme ? FogDark : FogIcon;
                 break;
         case SMOKE:
-                weatherIcon = isDarkMode ? SmokeDark : SmokeIcon;
+                weatherIcon = isDarkTheme ? SmokeDark : SmokeIcon;
                 break;
     }
 

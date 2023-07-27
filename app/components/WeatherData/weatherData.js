@@ -5,7 +5,7 @@ import UpdateIcon from '../../../assets/icons/LightTheme/refresh.png';
 
 const WeatherData = props => {
 
-    const { data, isDarkMode } = props;
+    const { data, isDarkTheme } = props;
 
     if(!data) {
         return (
@@ -17,7 +17,7 @@ const WeatherData = props => {
         )
     }
 
-    const weatherIcon = getIconForWeather(data.desc, isDarkMode);
+    const weatherIcon = getIconForWeather(data.desc, isDarkTheme);
 
     const refinedDateFromUTC = new Date(data.updatedAt);
     const localDateAndTime = 

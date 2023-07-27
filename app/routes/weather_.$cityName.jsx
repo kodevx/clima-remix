@@ -37,7 +37,7 @@ export const loader = async ({ params, request }) => {
 
     return {
         city: cityName,
-        isDarkMode: !!(themeData[0].theme === DARK_THEME),
+        isDarkTheme: !!(themeData[0].theme === DARK_THEME),
         weatherData: weatherData && weatherData.length > 0 && weatherData[0]
     }
 }
@@ -78,7 +78,7 @@ export const action = async ({ params, request }) => {
 
 const CityWeather = (props) => {
 
-    const { city, weatherData, isDarkMode } = useLoaderData();
+    const { city, weatherData, isDarkTheme } = useLoaderData();
 
     return (
         <div className="border-4 border-black p-20 m-10 dark:bg-stone-950">
@@ -111,7 +111,7 @@ const CityWeather = (props) => {
                         {city.toUpperCase()}
                     </div>
                 </div>
-                <WeatherData data={weatherData} isDarkMode={isDarkMode} /> 
+                <WeatherData data={weatherData} isDarkTheme={isDarkTheme} /> 
             </div>
         </div>
     )

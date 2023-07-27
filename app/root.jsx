@@ -27,7 +27,7 @@ export const loader = async ({ params, request }) => {
   return {
     themeId: Number(data[0].id),
     currentTheme: data[0].theme,
-    isDarkMode: !!(data[0].theme === 'dark')
+    isDarkTheme: !!(data[0].theme === 'dark')
   }
 }
 
@@ -54,14 +54,14 @@ export const action = async ({ params, request }) => {
 
 export default function App() {
 
-  const { isDarkMode, themeId, currentTheme } = useLoaderData();
+  const { isDarkTheme, themeId, currentTheme } = useLoaderData();
 
-  console.log("App isDarkMode: ",isDarkMode);
+  console.log("App isDarkTheme: ",isDarkTheme);
 
   return (
     <div>
-      <Document isDarkMode={isDarkMode}>
-        <Layout isDarkMode={isDarkMode} themeId={themeId} currentTheme={currentTheme}>
+      <Document isDarkTheme={isDarkTheme}>
+        <Layout isDarkTheme={isDarkTheme} themeId={themeId} currentTheme={currentTheme}>
           {process.env.NODE_ENV === 'development' 
             ? <LiveReload /> : null}
           <Outlet />
@@ -71,9 +71,9 @@ export default function App() {
   )
 }
 
-const Document = ({ children, title, isDarkMode }) => {
+const Document = ({ children, title, isDarkTheme }) => {
 
-  const themeClassName = isDarkMode ? 'dark' : null;   // Adds 'dark' classname to root html element to enable Dark Mode or null for light mode
+  const themeClassName = isDarkTheme ? 'dark' : null;   // Adds 'dark' classname to root html element to enable Dark Mode or null for light mode
 
   return (
     <html lang='en' class={themeClassName}>
@@ -89,7 +89,7 @@ const Document = ({ children, title, isDarkMode }) => {
   )
 }
 
-const Layout = ({ children, isDarkMode, themeId, currentTheme }) => {
+const Layout = ({ children, isDarkTheme, themeId, currentTheme }) => {
 
   return (
     <div className="flex flex-col">
@@ -99,7 +99,7 @@ const Layout = ({ children, isDarkMode, themeId, currentTheme }) => {
           <Form method='post'>
             <input name={"themeMode"} value={currentTheme} hidden readOnly />
             <input name={"id"} value={themeId} hidden readOnly />
-            <ThemeSwitchButton isDarkMode={isDarkMode} />
+            <ThemeSwitchButton isDarkTheme={isDarkTheme} />
           </Form>
         </div>
       </div>

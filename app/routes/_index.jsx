@@ -36,7 +36,7 @@ export const loader = async ({ params, request }) => {
 
     return {
         cities,
-        isDarkMode: !!(themeData[0].theme === DARK_THEME)
+        isDarkTheme: !!(themeData[0].theme === DARK_THEME)
     }
 }
 
@@ -92,7 +92,7 @@ export const action = async ({ request, params }) => {
 
 const Index = () => {
 
-    const { cities, isDarkMode } = useLoaderData();
+    const { cities, isDarkTheme } = useLoaderData();
 
     return (
         <div className="border-4 border-gray-950 p-10 m-10 dark:bg-stone-950">
@@ -108,7 +108,7 @@ const Index = () => {
                         <WeatherSummary 
                             key={data.id}
                             data={data}
-                            isDarkMode={isDarkMode}
+                            isDarkTheme={isDarkTheme}
                         />
                     )) : (
                         <div className='flex justify-center'>
