@@ -12,7 +12,7 @@ const ThemeSwitchButton = props => {
     return (
         <button 
             type='submit' 
-            className='bg-gray-100 hover:bg-gray-200 p-3 rounded-full self-center dark:bg-stone-800 dark:hover:bg-stone-700'
+            className='bg-gray-100 hover:bg-gray-200 p-3 rounded-full self-center dark:bg-neutral-800 dark:hover:bg-neutral-700'
         >
             <div className='flex flex-row'>
                 <img src={themeIcon} className='h-10 w-10' alt={'arrow-right'} />
