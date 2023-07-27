@@ -50,7 +50,7 @@ export const action = async ({ request, params }) => {
     
     console.log("City: ",city);
 
-    if(requestType === REMOVE_LOCATION) {   // Remove Location from Weather List
+    if(requestType === REMOVE_LOCATION) {   // Remove Location from Weather List in db
         try {
             console.log(`Remove City ${city}`);
             const weatherData = await removeWeatherLocation(city);
@@ -61,7 +61,7 @@ export const action = async ({ request, params }) => {
 
             return null;
         }
-    } else {                            // Add Location to Weather List
+    } else {                            // Add Location to Weather List in db
         try {
             if(!city) {
                 throw 'CITY_ERROR';
