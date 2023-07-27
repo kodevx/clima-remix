@@ -3,6 +3,7 @@ import { Form } from '@remix-run/react';
 import { redirect } from '@remix-run/server-runtime';
 import axios from 'axios';
 
+import { getTheme } from '../../app/models/theme.server';
 import SearchBar from '../components/SearchBar';
 import WeatherSummary from '../components/WeatherSummary';
 
@@ -26,10 +27,13 @@ export const loader = async ({ params, request }) => {
 
     const cities = await getCitiesWeatherList();
 
+    const themeData = await getTheme();
+
     console.log("cities: ",cities);
 
     return {
-        cities
+        cities,
+        isDarkMode: !!(themeData[0].theme === 'dark')
     }
 }
 
@@ -85,7 +89,7 @@ export const action = async ({ request, params }) => {
 
 const Index = () => {
 
-    const { cities } = useLoaderData();
+    const { cities, isDarkMode } = useLoaderData();
 
     return (
         <div className="border-4 border-gray-950 p-10 m-10 dark:bg-stone-950">
@@ -100,7 +104,8 @@ const Index = () => {
                     {cities && cities.length > 0 ? cities.map(data => (
                         <WeatherSummary 
                             key={data.id}
-                            data={data} 
+                            data={data}
+                            isDarkMode={isDarkMode}
                         />
                     )) : (
                         <div className='flex justify-center'>

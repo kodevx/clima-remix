@@ -16,6 +16,7 @@ import {
     LIGHT_INTENSITY_DRIZZLE
 } from '../constants/constants';
 
+// Light Theme Icons
 import SunnyIcon from '../../assets/icons/Sunny/sun.svg';
 import CloudsIcon from '../../assets/icons/cloudy.png';
 import CloudySunnyIcon from '../../assets/icons/cloudySunny.png';
@@ -31,56 +32,74 @@ import FewCloudsIcon from '../../assets/icons/fewClouds.png';
 import BrokenCloudsIcon from '../../assets/icons/brokenClouds.png';
 import DrizzleIcon from '../../assets/icons/drizzle.png';
 
-export const getIconForWeather = (weatherCondition) => {
+// Dark Theme Icons
+import SunIconDark from '../../assets/icons/DarkThemeIcons/sunny.png';
+import BrokenCloudsDark from '../../assets/icons/DarkThemeIcons/brokenClouds.png';
+import MistDarkIcon from '../../assets/icons/DarkThemeIcons/mist.png';
+import OvercastCloudsDark from '../../assets/icons/DarkThemeIcons/overcastClouds.png';
+import LightRainDark from '../../assets/icons/DarkThemeIcons/lightRain.png';
+import SnowIconDark from '../../assets/icons/DarkThemeIcons/snow.png';
+import FewCloudsDark from '../../assets/icons/DarkThemeIcons/fewClouds.png';
+import RainDark from '../../assets/icons/DarkThemeIcons/rain.png';
+import HazeDark from '../../assets/icons/DarkThemeIcons/haze.png';
+import FogDark from '../../assets/icons/DarkThemeIcons/fog.png';
+import SmokeDark from '../../assets/icons/DarkThemeIcons/smoke.png';
+import DrizzleDark from '../../assets/icons/DarkThemeIcons/drizzle.png';
+import SnowRainDark from '../../assets/icons/DarkThemeIcons/rainSnow.png';
+import DustDark from '../../assets/icons/DarkThemeIcons/dust.png';
+import CloudySunnyDark from '../../assets/icons/DarkThemeIcons/cloudSunny.png';
+
+
+export const getIconForWeather = (weatherCondition, isDarkMode = false) => {
 
     let weatherIcon;
-
+ 
     switch (weatherCondition) {
         case LIGHT_RAIN: 
-                weatherIcon = RainyIcon;
+                weatherIcon = isDarkMode ? LightRainDark : RainyIcon;
                 break;
         case MODERATE_RAIN: 
-                weatherIcon = RainyIcon;
+                weatherIcon = isDarkMode ? RainDark : RainyIcon;
                 break;
         case BROKEN_CLOUDS: 
-                weatherIcon = BrokenCloudsIcon;
+                weatherIcon = isDarkMode ? BrokenCloudsDark : BrokenCloudsIcon;
                 break;
         case FEW_CLOUDS:
-            weatherIcon = FewCloudsIcon;
-            break;
+                weatherIcon = isDarkMode ? FewCloudsDark : FewCloudsIcon;
+                break;
         case OVERCAST_CLOUDS:
-            weatherIcon = CloudsIcon;
-            break;
+                weatherIcon = isDarkMode ? OvercastCloudsDark : CloudsIcon;
+                break;
         case SCATERED_CLOUDS:
-            weatherIcon = CloudySunnyIcon;
-            break;
+                weatherIcon = isDarkMode ? CloudySunnyDark : CloudySunnyIcon;
+                break;
         case RAIN_AND_SNOW:
-            weatherIcon = SnowRainIcon;
-            break;
+                weatherIcon = isDarkMode ? SnowRainDark : SnowRainIcon;
+                break;
         case LIGHT_INTENSITY_DRIZZLE:
-            weatherIcon = DrizzleIcon;
-            break;
+                weatherIcon = isDarkMode ? DrizzleDark : DrizzleIcon;
+                break;
         case SNOW:
-            weatherIcon = SnowIcon;
-            break;
+                weatherIcon = isDarkMode ? SnowIconDark : SnowIcon;
+                break;
         case HAZE:
-            weatherIcon = HazeIcon;
-            break;
+                weatherIcon = isDarkMode ? HazeDark : HazeIcon;
+                break;
         case DUST:
-            weatherIcon = DustIcon;
-            break;
+                weatherIcon =  isDarkMode ? DustDark : DustIcon;
+                break;
         case CLEAR_SKY:
-            weatherIcon = SunnyIcon;
-            break;
+                weatherIcon = isDarkMode ? SunIconDark : SunnyIcon;
+                break;
         case MIST:
-            weatherIcon = MistIcon;
-            break;
+                weatherIcon = isDarkMode ? MistDarkIcon : MistIcon;
+                break;
         case FOG:
-            weatherIcon = FogIcon;
-            break;
+                weatherIcon = isDarkMode ? FogDark : FogIcon;
+                break;
         case SMOKE:
-            weatherIcon = SmokeIcon;
-            break;
+                weatherIcon = isDarkMode ? SmokeDark : SmokeIcon;
+                break;
     }
 
     return weatherIcon;

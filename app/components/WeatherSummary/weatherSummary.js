@@ -1,15 +1,14 @@
 import React from 'react';
 import { Form, Link } from "@remix-run/react";
 
-
 import ArrowRight from '../../../assets/icons/arrowRight.svg';
 import { getIconForWeather } from '../../utils/getIconForWeather';
 
 const WeatherSummary = (props) => {
 
-    const { data, handleClose } = props;
+    const { data, isDarkMode } = props;
 
-    const weatherIcon = getIconForWeather(data.desc);
+    const weatherIcon = getIconForWeather(data.desc, isDarkMode);
 
     return (
             <div className='h-52 m-10 flex flex-row text-lg shadow-xl transition duration-300 ease-in-out hover:translate-x-1 hover:scale-105 dark:bg-neutral-800'>
