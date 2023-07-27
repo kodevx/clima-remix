@@ -7,8 +7,8 @@ export const formatWeatherData = (data) => {
         speed: data.wind.speed,
         deg: data.wind.deg,
         feelsLike: data.main.feels_like,
-        tempMax: data.main.temp_min,
-        tempMin: data.main.temp_max,
+        tempMax: data.main.temp_max,
+        tempMin: data.main.temp_min,
         pressure: data.main.pressure,
         humidity: data.main.humidity
     }
