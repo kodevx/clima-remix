@@ -10,7 +10,7 @@ const WeatherData = props => {
     if(!data) {
         return (
             <div className='text-lg flex justify-center mt-14'>
-               <div className='text-white px-3 bg-black font-gothamMedium tracking-wide'>
+               <div className='text-white px-3 bg-black font-gothamMedium tracking-wide dark:bg-neutral-800 dark:text-orange-400'>
                     WEATHER DATA NOT AVAILABLE.
                 </div>
             </div>

@@ -20,12 +20,12 @@ async function seed() {
   //   });
   // }
 
-  let data = { 
+  let themeRowData = { 
     id: 1,
     theme: 'light'
   }
 
-  prisma.theme.create({ data })
+  const themeData = await prisma.theme.create({ data: { ...themeRowData } });
 
   console.log(`\nDatabase has been seeded. 🌱`);
 }

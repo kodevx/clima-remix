@@ -112,7 +112,7 @@ const Index = () => {
                         />
                     )) : (
                         <div className='flex justify-center'>
-                            <span className='text-lg text-white px-3 bg-black font-gothamMedium tracking-wide'>
+                            <span className='text-lg text-white px-3 bg-black font-gothamMedium tracking-wide dark:text-orange-300 dark:bg-neutral-800'>
                                 NO CITIES ARE ADDED.
                             </span>
                         </div>
