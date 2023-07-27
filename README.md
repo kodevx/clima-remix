@@ -7,6 +7,9 @@
 From your terminal:
 
 ```sh
+npx prisma db push
+npx prisma db seed
+
 npm run dev
 ```
 
@@ -17,6 +20,9 @@ This starts your app in development mode, rebuilding assets on file changes.
 First, build your app for production:
 
 ```sh
+npx prisma db push
+npx prisma db seed
+
 npm run build
 ```
 
