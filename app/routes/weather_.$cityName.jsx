@@ -10,11 +10,15 @@ import TippyStyles from 'tippy.js/dist/tippy.css';
 // import 'tippy.js/animations/scale-subtle.css';
 
 import { formatWeatherData } from '../utils/formatWeatherData';
+import { getTheme } from '../../app/models/theme.server';
+
 import { 
     getWeatherByCityName, 
     removeWeatherLocation, 
     updateWeatherForCity 
 } from '../models/weather.server';
+
+import { DARK_THEME } from "../constants/constants";
 
 const GET_LATEST_WEATHER_INFO = 'update-weather-info';
 
@@ -27,10 +31,13 @@ export const loader = async ({ params, request }) => {
     const cityName = params.cityName;
     const weatherData = await getWeatherByCityName(cityName);
 
+    const themeData = await getTheme();
+
     // console.log('City Weather: ',weatherData);
 
     return {
         city: cityName,
+        isDarkMode: !!(themeData[0].theme === DARK_THEME),
         weatherData: weatherData && weatherData.length > 0 && weatherData[0]
     }
 }
@@ -71,7 +78,7 @@ export const action = async ({ params, request }) => {
 
 const CityWeather = (props) => {
 
-    const { city, weatherData } = useLoaderData();
+    const { city, weatherData, isDarkMode } = useLoaderData();
 
     return (
         <div className="border-4 border-black p-20 m-10 dark:bg-stone-950">
@@ -104,7 +111,7 @@ const CityWeather = (props) => {
                         {city.toUpperCase()}
                     </div>
                 </div>
-                <WeatherData data={weatherData} /> 
+                <WeatherData data={weatherData} isDarkMode={isDarkMode} /> 
             </div>
         </div>
     )

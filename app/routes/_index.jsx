@@ -3,16 +3,19 @@ import { Form } from '@remix-run/react';
 import { redirect } from '@remix-run/server-runtime';
 import axios from 'axios';
 
-import { getTheme } from '../../app/models/theme.server';
 import SearchBar from '../components/SearchBar';
 import WeatherSummary from '../components/WeatherSummary';
 
+import { getTheme } from '../../app/models/theme.server';
 import { formatWeatherData } from '../utils/formatWeatherData';
+
 import { 
     getCitiesWeatherList, 
     saveCityWeather, 
     removeWeatherLocation 
 } from '../models/weather.server';
+
+import { DARK_THEME } from '../constants/constants';
 
 const REMOVE_LOCATION = 'remove-location';
 
@@ -33,7 +36,7 @@ export const loader = async ({ params, request }) => {
 
     return {
         cities,
-        isDarkMode: !!(themeData[0].theme === 'dark')
+        isDarkMode: !!(themeData[0].theme === DARK_THEME)
     }
 }
 

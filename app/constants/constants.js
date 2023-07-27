@@ -18,3 +18,6 @@ export const MIST = 'mist';
 export const SMOKE = 'smoke';
 
 export const CLEAR_SKY = 'clear sky';
+
+export const DARK_THEME = 'dark';
+export const LIGHT_THEME = 'light';
